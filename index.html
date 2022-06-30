@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Univali</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,700;1,100&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <!-- <h1 id="logo">dev.finance$</h1> -->
+        Univali
+    </header>
+
+    <main class="container">
+        <section id="transaction">
+            <h2 class="sr-only">Univali</h2>
+            <a href="#" onclick="Modal.open()" class="button new">+ Novo produto</a>
+            <table id="data-table">
+                <thead>
+                    <tr>
+                        <th>Nome do item</th>
+                        <th>Unidade de medida</th>
+                        <th>Quantidade</th>
+                        <th>Preço</th>
+                        <th>Produto perecível</th>
+                        <th>Data de validade</th>
+                        <th>Data de fabricação</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <div class="modal-overlay">
+        <div class="modal">
+            <div class="modal-content">
+                <div id="form">
+                    <h2>Novo Produto</h2>
+                    <form onsubmit="Form.submit(event)">
+                        <div class="input-group">
+                            <label for="nome-do-item">Nome do item</label>
+                            <input 
+                                type="text" 
+                                id="nome-do-item" 
+                                name="nome-do-item" 
+                                value=""
+                                placeholder="Nome do item"
+                            >
+                        </div>
+                        <div class="input-group">
+                            <label for="unidade-de-medida">Unidade de medida</label><br />
+                            <select name="unidade-de-medida" id="unidade-de-medida">
+                                <option selected value="lt">Litro</option>
+                                <option value="kg">Quilograma</option>
+                                <option value="un">Unidade</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label for="quantidade">Quantidade</label>
+                            <input 
+                                type="number"
+                                step="1"
+                                id="quantidade"
+                                name="quantidade"
+                                value=""
+                                placeholder="0"
+                            >
+                        </div>
+                        <div class="input-group">
+                            <label for="preco">Preço</label>
+                            <input 
+                                type="number"
+                                step="0.01"
+                                id="preco"
+                                name="preco"
+                                value=""
+                                placeholder="0,00"
+                            >
+                        </div>
+                        <div class="input-group">
+                            <label for="produto-perecivel">Produto perecível</label><br />
+                            <input 
+                                type="checkbox"
+                                id="produto-perecivel"
+                                name="produto-perecivel"
+                            >
+                        </div>
+                        <div class="input-group">
+                            <label for="data-de-fabricacao">Data de fabricação</label>
+                            <input 
+                                type="date"
+                                id="data-de-fabricacao"
+                                name="data-de-fabricacao"
+                            >
+                        </div>
+                        <div class="input-group">
+                            <label for="data-de-validade">Data de validade</label>
+                            <input 
+                                type="date"
+                                id="data-de-validade"
+                                name="data-de-validade"
+                            >
+                        </div>
+                        <div class="input-group actions">
+                            <a href="#" class="button cancel" onclick="Modal.close()">Cancelar</a>
+                            <button type="submit">Salvar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Univali</p>
+    </footer>
+
+    <script src="./index.js"></script>
+</body>
+</html>
